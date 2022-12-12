@@ -1,4 +1,4 @@
-public abstract class Amphibian extends Animal{
+public class Amphibian extends Animal{
 
     public Amphibian(String name, int year) {
         super(name, year);
