@@ -15,6 +15,14 @@ public class Main {
         Animal albatross = new Flying(" Диди",4, " Зоопарк");
         Animal falcon = new Flying(" Комар",6, " Зоопарк");
 
+        gazelle.eat();
+        tiger.eat();
+        dodo.eat();
+        snake.eat();
+
+
 
     }
+
+
 }

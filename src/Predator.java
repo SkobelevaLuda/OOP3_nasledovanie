@@ -1,4 +1,5 @@
 public class Predator extends Mammal{
+    public static String typeOfFood;
 
     public static void hunt(){
         System.out.println("Хищник охотится.");
@@ -6,24 +7,30 @@ public class Predator extends Mammal{
     }
 
     public Predator(String name, int year, int speed, String typeOfFood) {
-        super(name, year, speed, typeOfFood);
+        super(name, year, speed);
+        this.typeOfFood = typeOfFood;
+    }
+
+    public static String getTypeOfFood() {
+        return typeOfFood;
+    }
+
+    public static void setTypeOfFood(String typeOfFood) {
+        Predator.typeOfFood = typeOfFood;
     }
 
     @Override
     public void eat() {
-        super.eat();
         System.out.println("Хищник питается "+ getTypeOfFood());
     }
 
     @Override
     public void sleep() {
-        super.sleep();
         System.out.println(" Хищник спит днем");
     }
 
     @Override
     public void move() {
-        super.move();
         System.out.println("Хищник передвигается бегом");
     }
 

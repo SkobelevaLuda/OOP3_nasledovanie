@@ -1,16 +1,12 @@
+import java.util.Objects;
+
 public class Mammal extends Animal {
     public int speed;
-    public static String typeOfFood;
 
-    public Mammal(String name, int year, int speed, String typeOfFood) {
+
+    public Mammal(String name, int year, int speed) {
         super(name, year);
         this.speed = speed;
-        this.typeOfFood = typeOfFood;
-    }
-
-    public Mammal(String name, int year, String typeOfFood) {
-        super(name, year);
-        this.typeOfFood = typeOfFood;
     }
 
     public static void goForValk(){
@@ -25,9 +21,6 @@ public class Mammal extends Animal {
         this.speed = speed;
     }
 
-    public String getTypeOfFood() {
-        return typeOfFood;
-    }
 
     @Override
     public void eat() {
@@ -43,4 +36,20 @@ public class Mammal extends Animal {
     public void move() {
 
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Mammal)) {
+            return false;
+        }
+        if (!super.equals(o)) {
+            return false;
+        }
+        Mammal mammal = (Mammal) o;
+        return getSpeed() == mammal.getSpeed();
+    }
+
 }

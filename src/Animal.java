@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public abstract class Animal {
     private static String name;
     private static int year;
@@ -27,6 +29,20 @@ public abstract class Animal {
     public void setLivingEnvironment(String livingEnvironment) {
         this.livingEnvironment = livingEnvironment;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o){
+            return true;
+        }
+        if (!(o instanceof Animal)){
+            return false;
+        }
+        Animal animal = (Animal) o;
+        return Objects.equals(getLivingEnvironment(), animal.getLivingEnvironment());
+    }
+
 }
+
 
 

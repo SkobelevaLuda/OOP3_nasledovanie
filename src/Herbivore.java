@@ -1,6 +1,16 @@
 public class Herbivore extends Mammal{
+    public static String typeOfFood;
     public Herbivore(String name, int year, int speed, String typeOfFood) {
-        super(name, year, speed, typeOfFood);
+        super(name, year, speed);
+        this.typeOfFood = typeOfFood;
+    }
+
+    public static String getTypeOfFood() {
+        return typeOfFood;
+    }
+
+    public static void setTypeOfFood(String typeOfFood) {
+        Herbivore.typeOfFood = typeOfFood;
     }
 
     public static void graze(){
@@ -10,19 +20,16 @@ public class Herbivore extends Mammal{
 
     @Override
     public void eat() {
-        super.eat();
         System.out.println(" Травоядное питается "+ getTypeOfFood());
     }
 
     @Override
     public void sleep() {
-        super.sleep();
         System.out.println(" Травоядное спит ночью ");
     }
 
     @Override
     public void move() {
-        super.move();
         System.out.println(" Травоядное гуляет по траве ");
     }
 }
